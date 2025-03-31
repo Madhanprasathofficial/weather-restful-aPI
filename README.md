@@ -120,8 +120,8 @@ The Weather API is a Spring Boot application that provides real-time weather dat
 ### Steps to Run the Application
 1. **Clone the Repository**:
     ```
-      git clone <repository-url>
-       cd <project-directory>
+      git clone https://github.com/Madhanprasathofficial/weather-restful-aPI.git
+       cd weather-restful-aPI
       ```
    git clone <repository-url>
    cd <project-directory>
@@ -157,7 +157,7 @@ Alternatively, you can run the main class directly:
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:8080/api/weather?city=London&country=UK&apiKey=b2180c8ac8633b32549bb10ac4ca7730"
+GET "http://localhost:8080/api/weather?city=London&country=UK&apiKey=b2180c8ac8633b32549bb10ac4ca7730"
 ```
 
 **Response:**
@@ -242,5 +242,5 @@ POST "http://localhost:8080/api/key/validate?apiKey=your_api_key"
 ### Swagger API Docs
 Access the complete API documentation here:
 ```bash
-http://localhost:8080/v3/api-docs)
+GET http://localhost:8080/v3/api-docs)
 ```
