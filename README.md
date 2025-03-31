@@ -145,3 +145,102 @@ Alternatively, you can run the main class directly:
 ```
    Run WeatherApiApplication
 ```
+## Weather API Documentation
+
+### GET /api/weather
+**Description:** Retrieves weather data for a given city and country.
+
+**Query Parameters:**
+- `city` (string, required): The name of the city (e.g., "London").
+- `country` (string, required): The country code (e.g., "UK").
+- `apiKey` (string, required): The API key for authentication.
+
+**Example Request:**
+```bash
+curl -X GET "http://localhost:8080/api/weather?city=London&country=UK&apiKey=b2180c8ac8633b32549bb10ac4ca7730"
+```
+
+**Response:**
+```json
+{
+  "description": "clear sky"
+}
+```
+
+---
+
+## API Key Management Endpoints
+
+### POST /api/key/add
+**Description:** Adds a new API key.
+
+**Query Parameters:**
+- `apiKey` (string, required): The API key to add.
+
+**Example Request:**
+```bash
+ POST "http://localhost:8080/api/key/add?apiKey=your_new_api_key"
+```
+
+**Response:**
+```json
+"API key added successfully."
+```
+
+---
+
+### DELETE /api/key/delete
+**Description:** Deletes an existing API key.
+
+**Query Parameters:**
+- `apiKey` (string, required): The API key to delete.
+
+**Example Request:**
+```bash
+ DELETE "http://localhost:8080/api/key/delete?apiKey=your_api_key"
+```
+
+**Response:**
+```json
+"API key deleted successfully."
+```
+
+---
+
+### GET /api/key/list
+**Description:** Lists all valid API keys.
+
+**Example Request:**
+```bash
+ GET "http://localhost:8080/api/key/list"
+```
+
+**Response:**
+```json
+["key1", "key2", "key3"]
+```
+
+---
+
+### POST /api/key/validate
+**Description:** Validates an API key.
+
+**Query Parameters:**
+- `apiKey` (string, required): The API key to validate.
+
+**Example Request:**
+```bash
+POST "http://localhost:8080/api/key/validate?apiKey=your_api_key"
+```
+
+**Response:**
+```json
+{
+  "valid": true
+}
+```
+### Swagger API Docs
+Access the complete API documentation here:
+```bash
+http://localhost:8080/v3/api-docs)
+```
